@@ -1,84 +1,87 @@
 <!DOCTYPE HTML>
-<html><head><title>fonetisk generator</title>
+<html>
+
+<head>
+    <title>fonetisk generator</title>
 
 </head>
+
 <body>
-<textarea id="text"></textarea>
-<br/>
-<span id="translation"></span>
-<script>
-(function(){
-"use strict";
-var f=function(text){
-var alphabet={};
-alphabet["a"]="Anna";
-alphabet["b"]="Bernhard";
-alphabet["c"]="Caesar";
-alphabet["d"]="David";
-alphabet["e"]="Edith";
-alphabet["f"]="Fredrik";
-alphabet["g"]="Gustav";
-alphabet["h"]="Harald";
-alphabet["i"]="Ivar";
-alphabet["j"]="Johan";
-alphabet["k"]="Karin";
-alphabet["l"]="Ludvig";
-alphabet["m"]="Martin";
-alphabet["n"]="Nils";
-alphabet["o"]="Olivia";
-alphabet["p"]="Petter";
-alphabet["q"]="Quintus";
-alphabet["r"]="Rikard";	
-alphabet["s"]="Sigrid";
-alphabet["t"]="Teodor";
-alphabet["u"]="Ulrik";
-alphabet["v"]="Enkelt-V";
-alphabet["w"]="Dobbelt-V";
-alphabet["x"]="xenofil";//"Xerxes";???
-alphabet["y"]="Yngling";
-alphabet["z"]="Zakarias";
-alphabet["æ"]="Ærlig";
-alphabet["ø"]="Østen";
-alphabet["å"]="Åse";
-alphabet["."]="Punktum";
-alphabet[","]="Komma";
-alphabet[" "]="Mellomrom";
-alphabet["-"]="Bindestrek";
-alphabet["_"]="Understrek";
-alphabet["?"]="Spørsmålstegn";
-alphabet["0"]="Tallet(0)";
-alphabet["1"]="Tallet(1)";
-alphabet["2"]="Tallet(2)";
-alphabet["3"]="Tallet(3)";
-alphabet["4"]="Tallet(4)";
-alphabet["5"]="Tallet(5)";
-alphabet["6"]="Tallet(6)";
-alphabet["7"]="Tallet(7)";
-alphabet["8"]="Tallet(8)";
-alphabet["9"]="Tallet(9)";
-var ret="";
-text=text.split("");
-var curr="";
-for(var i=0;i<text.length;++i){
-curr=text[i];
-if(alphabet.hasOwnProperty(curr.toLowerCase())){
-ret+=alphabet[curr.toLowerCase()]+" ";
-}else{
-ret+=curr;
-}
-}
-return ret.trim();
-};
-var ff=function(ev){
-var translation=f(ev.target.value);
-document.getElementById("translation").textContent=translation;
-};
-
-var ele=document.getElementById("text");
-ele.addEventListener("change",ff);
-ele.addEventListener("input",ff);
-})();
-
-</script>
+    <textarea id="text"></textarea>
+    <br/>
+    <span id="translation"></span>
+    <script>
+        (function() {
+            "use strict";
+            var f = function(text) {
+                var alphabet = {};
+                alphabet["a"] = "Anna";
+                alphabet["b"] = "Bernhard";
+                alphabet["c"] = "Caesar";
+                alphabet["d"] = "David";
+                alphabet["e"] = "Edith";
+                alphabet["f"] = "Fredrik";
+                alphabet["g"] = "Gustav";
+                alphabet["h"] = "Harald";
+                alphabet["i"] = "Ivar";
+                alphabet["j"] = "Johan";
+                alphabet["k"] = "Karin";
+                alphabet["l"] = "Ludvig";
+                alphabet["m"] = "Martin";
+                alphabet["n"] = "Nils";
+                alphabet["o"] = "Olivia";
+                alphabet["p"] = "Petter";
+                alphabet["q"] = "Quintus";
+                alphabet["r"] = "Rikard";
+                alphabet["s"] = "Sigrid";
+                alphabet["t"] = "Teodor";
+                alphabet["u"] = "Ulrik";
+                alphabet["v"] = "Enkelt-V";
+                alphabet["w"] = "Dobbelt-V";
+                alphabet["x"] = "xenofil"; //"Xerxes";???
+                alphabet["y"] = "Yngling";
+                alphabet["z"] = "Zakarias";
+                alphabet["æ"] = "Ærlig";
+                alphabet["ø"] = "Østen";
+                alphabet["å"] = "Åse";
+                alphabet["."] = "Punktum";
+                alphabet[","] = "Komma";
+                alphabet[" "] = "Mellomrom";
+                alphabet["-"] = "Bindestrek";
+                alphabet["_"] = "Understrek";
+                alphabet["?"] = "Spørsmålstegn";
+                alphabet["0"] = "Tallet(0)";
+                alphabet["1"] = "Tallet(1)";
+                alphabet["2"] = "Tallet(2)";
+                alphabet["3"] = "Tallet(3)";
+                alphabet["4"] = "Tallet(4)";
+                alphabet["5"] = "Tallet(5)";
+                alphabet["6"] = "Tallet(6)";
+                alphabet["7"] = "Tallet(7)";
+                alphabet["8"] = "Tallet(8)";
+                alphabet["9"] = "Tallet(9)";
+                var ret = "";
+                text = text.split("");
+                var curr = "";
+                for (var i = 0; i < text.length; ++i) {
+                    curr = text[i];
+                    if (alphabet.hasOwnProperty(curr.toLowerCase())) {
+                        ret += alphabet[curr.toLowerCase()] + " ";
+                    } else {
+                        ret += curr;
+                    }
+                }
+                return ret.trim();
+            };
+            var ff = function(ev) {
+                var translation = f(ev.target.value);
+                document.getElementById("translation").textContent = translation;
+            };
+            var ele = document.getElementById("text");
+            ele.addEventListener("change", ff);
+            ele.addEventListener("input", ff);
+        })();
+    </script>
 </body>
+
 </html>
